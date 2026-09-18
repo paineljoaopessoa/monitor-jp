@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Monitor João Pessoa – Versão Final (Privado)</title>
+<style>
+:root{--bg:#f1f5f9;--card:#fff;--text:#0f172a;--muted:#64748b;--border:#e2e8f0;--primary:#0f172a;--accent:#2563eb;--danger:#dc2626;--warn:#d97706;--ok:#16a34a;}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;background:var(--bg);color:var(--text);line-height:1.55}
+html{scroll-behavior:smooth}
+header{background:var(--primary);color:#fff;padding:18px 20px;position:sticky;top:0;z-index:50}
+header .top{display:flex;justify-content:space-between;align-items:center}
+header h1{font-size:1.2rem;font-weight:600}
+.badge{background:#22c55e;color:#052e16;font-size:.7rem;font-weight:700;padding:4px 10px;border-radius:999px}
+header p{font-size:.82rem;color:#94a3b8;margin-top:4px}
+nav{background:#fff;border-bottom:1px solid var(--border);padding:10px 20px;display:flex;gap:14px;overflow-x:auto;font-size:.85rem;-webkit-overflow-scrolling:touch}
+nav a{color:var(--muted);text-decoration:none;font-weight:500;white-space:nowrap;padding:4px 0}
+nav a:hover{color:var(--primary)}
+.card{scroll-margin-top:90px}
+main{max-width:1080px;margin:24px auto;padding:0 16px 70px}
+.card{background:var(--card);border-radius:12px;border:1px solid var(--border);padding:22px;margin-bottom:18px;box-shadow:0 1px 3px rgba(0,0,0,.04)}
+.card h2{font-size:1.12rem;margin-bottom:6px}
+.card .desc{color:var(--muted);font-size:.9rem;margin-bottom:14px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:12px;margin:14px 0}
+.stat{background:#f8fafc;border:1px solid var(--border);border-radius:8px;padding:12px}
+.stat .label{font-size:.72rem;color:var(--muted);text-transform:uppercase}
+.stat .value{font-size:1.15rem;font-weight:700;margin-top:3px}
+table{width:100%;border-collapse:collapse;font-size:.83rem;margin-top:10px}
+th,td{text-align:left;padding:8px 10px;border-bottom:1px solid var(--border);vertical-align:top}
+th{background:#f8fafc;font-weight:600;font-size:.73rem;text-transform:uppercase;color:#334155}
+.box{padding:13px 15px;border-radius:0 8px 8px 0;font-size:.87rem;margin-top:12px}
+.box-info{background:#eff6ff;border-left:4px solid var(--accent);color:#1e3a8a}
+.box-warn{background:#fffbeb;border-left:4px solid var(--warn);color:#92400e}
+.box-ok{background:#f0fdf4;border-left:4px solid var(--ok);color:#14532d}
+.box-alert{background:#fef2f2;border-left:4px solid var(--danger);color:#7f1d1d}
+.trail{background:#f8fafc;border:1px solid var(--border);border-radius:10px;padding:18px;margin-top:14px}
+.trail-title{font-weight:700;font-size:.95rem;margin-bottom:12px}
+.step{display:flex;gap:12px;margin-bottom:11px;font-size:.86rem}
+.num{background:var(--primary);color:#fff;width:26px;height:26px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:.8rem;font-weight:700;flex-shrink:0}
+.indicio{background:#fefce8;border:1px solid #fde047;border-radius:8px;padding:10px 12px;margin-top:6px;font-size:.82rem}
+.tag{display:inline-block;font-size:.66rem;padding:2px 7px;border-radius:999px;font-weight:600;margin-left:4px}
+.tag-warn{background:#fef3c7;color:#92400e}
+.tag-new{background:#dbeafe;color:#1e40af}
+.tag-link{background:#e0e7ff;color:#3730a3}
+ul.clean{padding-left:18px;font-size:.89rem;line-height:1.75;color:#334155}
+footer{text-align:center;padding:28px;color:#94a3b8;font-size:.8rem}
+.small{font-size:.8rem;color:var(--muted)}
+</style>
+</head>
+<body>
+<header>
+  <div class="top">
+    <h1>Monitor João Pessoa</h1>
+    <span class="badge">PRIVADO • FINAL+</span>
+  </div>
+  <p>Versão de conclusão • Inclui Recuperação Judicial e processos do TCE</p>
+</header>
+<nav>
+  <a href="#resumo">Resumo</a>
+  <a href="#achados">Principais Achados</a>
+  <a href="#processos">Processos</a>
+  <a href="#trilhas">Trilhas</a>
+  <a href="#conexoes">Conexões</a>
+  <a href="#ranking">Ranking</a>
+  <a href="#politica">Política</a>
+  <a href="#denuncia">Como denunciar</a>
+  <a href="#limites">Limites</a>
+</nav>
+<main>
+
+<!-- RESUMO -->
+<div class="card" id="resumo">
+  <h2>O que este projeto entregou</h2>
+  <p class="desc">Organização de dados públicos da Prefeitura de João Pessoa (contratos 2024+) e emendas parlamentares, com foco em identificar padrões suspeitos de forma rastreável e segura.</p>
+  <div class="grid">
+    <div class="stat"><div class="label">Contratos 2024+</div><div class="value">8.788</div></div>
+    <div class="stat"><div class="label">Valor total</div><div class="value">R$ 11,85 bi</div></div>
+    <div class="stat"><div class="label">Emendas JP</div><div class="value">4.776</div></div>
+    <div class="stat"><div class="label">Valor emendas</div><div class="value">R$ 831 mi</div></div>
+  </div>
+  <div class="box box-ok">
+    <strong>Status:</strong> Esta etapa está concluída. Os dados estão organizados, as principais trilhas montadas e o material pronto para verificação e, se desejar, denúncia anônima.
+  </div>
+</div>
+
+<!-- PRINCIPAIS ACHADOS -->
+<div class="card" id="achados">
+  <h2>Principais Achados (o que de fato encontramos)</h2>
+  
+  <div class="box box-warn">
+    <strong>1. Consórcio SFT – indício mais forte</strong><br>
+    • CNPJ aberto em <strong>14/02/2024</strong><br>
+    • Contrato assinado no dia seguinte (<strong>15/02/2024</strong>)<br>
+    • Valor acumulado nos dados: <strong>R$ 529 milhões</strong><br>
+    • Homologação da licitação ocorreu em 15/01/2024 (proposta inicial R$ 40,88 mi)<br>
+    • Empresas: Sanccol (antiga) + Tecgeo + Fenix · Admin: Giovanni Gondim Petrucci<br>
+    • <strong>Sanccol está em Recuperação Judicial desde 2021</strong> (processo 0801401-16.2021.8.15.0731 – Cabedelo)
+  </div>
+
+  <div class="box box-info" style="margin-top:12px">
+    <strong>2. Outros consórcios novos com o mesmo padrão</strong><br>
+    • <strong>NovatecPDCA</strong> – aberto 16/04/2024 → contrato R$ 370 mi (Parque da Cidade)<br>
+    • <strong>Viário Paraíba</strong> – aberto 04/09/2024 → R$ 213 mi (pavimentação)<br>
+    • <strong>Ponte Rio Cuia</strong> – aberto 09/10/2024 → R$ 93 mi
+  </div>
+
+  <div class="box box-info" style="margin-top:12px">
+    <strong>3. Conexão entre consórcios (início da teia)</strong><br>
+    A empresa <strong>Vigent Construções</strong> participa de dois consórcios diferentes:<br>
+    Viário Paraíba (R$ 213 mi) e Ponte Rio Cuia (R$ 93 mi).
+  </div>
+
+  <div class="box box-warn" style="margin-top:12px">
+    <strong>4. Observação extra</strong><br>
+    O Consórcio Novatec-PDCA teve contrato em São Miguel de Taipu declarado <strong>irregular</strong> pelo TCE-PB em 2025.
+  </div>
+</div>
+
+<!-- PROCESSOS -->
+<div class="card" id="processos">
+  <h2>Processos e situações judiciais encontradas</h2>
+  <p class="desc">Informações públicas sobre Recuperação Judicial, decisões do TCE e outros processos relacionados às empresas das trilhas.</p>
+
+  <div class="box box-alert">
+    <strong>Sanccol (empresa do Consórcio SFT) – Recuperação Judicial</strong><br>
+    • Processo nº <strong>0801401-16.2021.8.15.0731</strong><br>
+    • Comarca: Cabedelo (2ª Vara Mista)<br>
+    • Situação: Recuperação Judicial em andamento desde 2021<br>
+    • Houve Assembleias de Credores em 2024 e 2025<br>
+    • A empresa que sustenta o consórcio de R$ 529 mi está formalmente em recuperação judicial.
+  </div>
+
+  <div class="box box-warn" style="margin-top:12px">
+    <strong>Novatec / Consórcio NovatecPDCA</strong><br>
+    • TCE-PB declarou <strong>irregular</strong> o contrato do Consórcio Novatec-PDCA em São Miguel de Taipu (2025)<br>
+    • Em João Pessoa, o TCE-PB acompanha o contrato do Parque da Cidade (Processo TC 07218/24) – até agora há recomendações<br>
+    • Já teve contrato suspenso pelo TCE em Santa Rita no passado<br>
+    • Existem processos trabalhistas contra a empresa
+  </div>
+
+  <div class="box box-info" style="margin-top:12px">
+    <strong>Vigent / Fremix (Viário Paraíba e Ponte Rio Cuia)</strong><br>
+    • Não foi encontrada investigação pública específica do TCE ou MP sobre os contratos de João Pessoa<br>
+    • Fremix aparece com dívidas ativas federais (situação suspensa ou parcelada)
+  </div>
+
+  <div class="box box-info" style="margin-top:12px">
+    <strong>Consórcio SFT (o contrato em si)</strong><br>
+    • Não foi encontrada, até o momento, investigação específica do TCE ou MP sobre o contrato de João Pessoa.
+  </div>
+</div>
+
+<!-- TRILHAS -->
+<div class="card" id="trilhas">
+  <h2>Trilhas Investigativas (prontas para uso)</h2>
+
+  <div class="trail">
+    <div class="trail-title">Trilha 1 – Consórcio SFT <span class="tag tag-warn">Mais forte</span></div>
+    <div class="step"><div class="num">1</div><div><strong>Objeto:</strong> Recuperação e manutenção do sistema viário de João Pessoa</div></div>
+    <div class="step"><div class="num">2</div><div>
+      <strong>Linha do tempo:</strong><br>
+      15/01/2024 – Homologação da Concorrência 11.060/2023<br>
+      14/02/2024 – Abertura do CNPJ 53.902.877/0001-34<br>
+      15/02/2024 – Assinatura do Contrato 110062024
+    </div></div>
+    <div class="step"><div class="num">3</div><div>
+      <strong>Indício:</strong>
+      <div class="indicio">CNPJ do consórcio aberto apenas 1 dia antes da assinatura de contrato de alto valor. A empresa principal (Sanccol) está em <strong>Recuperação Judicial</strong> desde 2021 (processo 0801401-16.2021.8.15.0731). Verificar aditivos e evolução do valor (proposta inicial R$ 40,88 mi → R$ 529 mi nos dados).</div>
+    </div></div>
+  </div>
+
+  <div class="trail">
+    <div class="trail-title">Trilha 2 – Consórcio NovatecPDCA <span class="tag tag-new">2024</span></div>
+    <div class="step"><div class="num">1</div><div>CNPJ 54.753.424/0001-56 (16/04/2024) · Contrato 110562024 (14/06/2024) · R$ 369,6 mi · Parque da Cidade</div></div>
+    <div class="step"><div class="num">2</div><div>Empresas: Novatec + PDCA · Admin: Alexandre Albuquerque Teixeira</div></div>
+    <div class="step"><div class="num">3</div><div>Teve contrato declarado irregular pelo TCE-PB em outro município.</div></div>
+  </div>
+
+  <div class="trail">
+    <div class="trail-title">Trilha 3 – Viário Paraíba + Ponte Rio Cuia <span class="tag tag-link">Conexão</span></div>
+    <div class="step"><div class="num">1</div><div><strong>Viário Paraíba:</strong> CNPJ 57.153.127/0001-68 · R$ 213 mi · Fremix + Vigent</div></div>
+    <div class="step"><div class="num">2</div><div><strong>Ponte Rio Cuia:</strong> CNPJ 57.622.394/0001-37 · R$ 93 mi · Aahbrant + Vigent</div></div>
+    <div class="step"><div class="num">3</div><div>
+      <div class="indicio">Mesma empresa (Vigent) nos dois consórcios. Elo entre as obras.</div>
+    </div></div>
+  </div>
+
+  <div class="trail">
+    <div class="trail-title">Trilha 4 – Complexo Viário Altiplano</div>
+    <div class="step"><div class="num">1</div><div><strong>Mobilidade João Pessoa:</strong> R$ 128 mi · Azevedo & Travassos + KPE (em Recuperação Judicial)</div></div>
+    <div class="step"><div class="num">2</div><div><strong>Altiplano:</strong> R$ 107 mi · Grupo de origem portuguesa</div></div>
+  </div>
+</div>
+
+<!-- CONEXÕES -->
+<div class="card" id="conexoes">
+  <h2>Início da Teia de Conexões</h2>
+  <ul class="clean">
+    <li><strong>Vigent Construções</strong> → presente no Consórcio Viário Paraíba e no Consórcio Ponte Rio Cuia</li>
+    <li><strong>Novatec</strong> → aparece sozinha no ranking e também dentro do Consórcio NovatecPDCA</li>
+    <li><strong>Sanccol</strong> → empresa antiga que sustenta o Consórcio SFT</li>
+    <li>Nenhuma coincidência de nome completo entre os sócios mapeados e a lista de vereadores/prefeitos foi encontrada</li>
+  </ul>
+</div>
+
+<!-- RANKING -->
+<div class="card" id="ranking">
+  <h2>Top 15 Empresas (Contratos 2024+)</h2>
+  <table>
+    <thead><tr><th>#</th><th>Empresa</th><th>Valor (R$ mi)</th><th>Obs</th></tr></thead>
+    <tbody>
+      <tr><td>1</td><td>EXEMPLAR SERVICE E LIMPEZA</td><td>1.602</td><td>—</td></tr>
+      <tr><td>2</td><td>CONSORCIO SFT</td><td>529</td><td>Trilha 1</td></tr>
+      <tr><td>3</td><td>NOVATEC CONSTRUCOES</td><td>438</td><td>—</td></tr>
+      <tr><td>4</td><td>ARKO CONSTRUCOES</td><td>384</td><td>—</td></tr>
+      <tr><td>5</td><td>Construpav</td><td>381</td><td>—</td></tr>
+      <tr><td>6</td><td>CONSORCIO NOVATECPDCA</td><td>370</td><td>Trilha 2</td></tr>
+      <tr><td>7</td><td>Cetus Construtora</td><td>289</td><td>—</td></tr>
+      <tr><td>8</td><td>KANOVA</td><td>278</td><td>—</td></tr>
+      <tr><td>9</td><td>TECHSOL</td><td>271</td><td>—</td></tr>
+      <tr><td>10</td><td>INOVA AMBIENTAL</td><td>261</td><td>—</td></tr>
+      <tr><td>11</td><td>Fund. Napoleão Laureano</td><td>250</td><td>Também emendas</td></tr>
+      <tr><td>12</td><td>GURGEL SOARES</td><td>215</td><td>Rec. Judicial</td></tr>
+      <tr><td>13</td><td>CONSORCIO VIARIO PARAIBA</td><td>213</td><td>Trilha 3</td></tr>
+      <tr><td>14</td><td>Inst. Walfredo Guedes</td><td>193</td><td>Também emendas</td></tr>
+      <tr><td>15</td><td>Construdantas</td><td>147</td><td>CNPJ pendente</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<!-- POLÍTICA -->
+<div class="card" id="politica">
+  <h2>Contexto Político (referência)</h2>
+  <p class="desc">Prefeito atual: <strong>Leo Bezerra</strong> (PSB) – desde abril/2026<br>
+  Ex-prefeito: <strong>Cícero Lucena</strong> (MDB)<br>
+  Presidente da Câmara: <strong>Dinho Dowsley</strong> (PSD)<br>
+  29 vereadores (legislatura 2025-2028)</p>
+  <p class="small">Nenhuma ligação familiar comprovada entre estes nomes e os sócios das empresas analisadas até o momento.</p>
+</div>
+
+<!-- COMO DENUNCIAR -->
+<div class="card" id="denuncia">
+  <h2>Como usar estes dados com segurança</h2>
+  
+  <div class="box box-info">
+    <strong>1. Sempre confira a fonte original</strong><br>
+    • Contrato → Portal da Transparência de João Pessoa (número do contrato)<br>
+    • CNPJ → Receita Federal<br>
+    • Edital / Homologação → Diário Oficial + PNCP<br>
+    • Emenda → Portal da Transparência Federal
+  </div>
+
+  <div class="box box-warn" style="margin-top:12px">
+    <strong>2. O que anotar antes de qualquer denúncia</strong><br>
+    Número do contrato e da licitação · CNPJ · Data de abertura do CNPJ vs data da homologação e da assinatura · Valor e objeto · Link ou captura da página oficial
+  </div>
+
+  <div class="box box-ok" style="margin-top:12px">
+    <strong>3. Canais oficiais (podem ser anônimos)</strong><br>
+    • Ministério Público da Paraíba (MP-PB)<br>
+    • Tribunal de Contas do Estado (TCE-PB)<br>
+    • Controladoria-Geral da União – Fala.BR<br>
+    • Ministério Público Federal (se houver recurso federal)
+  </div>
+
+  <div class="box box-alert" style="margin-top:12px">
+    <strong>Importante:</strong> Esta página só organiza dados públicos. Não é acusação.  
+    Só denuncie depois de conferir os documentos oficiais. Nunca invente informações.
+  </div>
+</div>
+
+<!-- LIMITES -->
+<div class="card" id="limites">
+  <h2>O que este projeto conseguiu e o que ainda falta</h2>
+  
+  <p><strong>Conseguimos:</strong></p>
+  <ul class="clean">
+    <li>Organizar 8.788 contratos e 4.776 emendas</li>
+    <li>Identificar os maiores fornecedores</li>
+    <li>Montar 4 trilhas investigativas com dados rastreáveis</li>
+    <li>Detectar padrão de consórcios novos ganhando contratos altos</li>
+    <li>Encontrar conexão entre empresas (Vigent em dois consórcios)</li>
+    <li>Deixar tudo pronto para verificação e denúncia segura</li>
+  </ul>
+
+  <p style="margin-top:14px"><strong>Ainda não conseguimos (e por quê):</strong></p>
+  <ul class="clean">
+    <li><strong>Provar desvio de dinheiro</strong> – isso exige medições de obra, notas fiscais, pagamentos reais e eventual super faturamento (dados que normalmente só o MP/TCE conseguem com poderes de investigação)</li>
+    <li><strong>Provar parentesco/ligação política</strong> – não encontramos coincidência de nomes até agora; seria necessário mais bases (declarações de bens, doações eleitorais etc.)</li>
+    <li><strong>Teia completa automática</strong> – faríamos com mais tempo e mais dados de sócios</li>
+  </ul>
+
+  <div class="box box-info" style="margin-top:14px">
+    O projeto do vídeo que você viu provavelmente tinha mais anos de dados, mais municípios e cruzamento automático com várias bases. Nós montamos a base sólida e os primeiros indícios fortes para João Pessoa. O material está pronto para ser usado.
+  </div>
+</div>
+
+</main>
+<footer>
+  Monitor João Pessoa • Uso exclusivo e privado • Versão FINAL desta etapa<br>
+  Dados públicos organizados • Não constitui acusação
+</footer>
+</body>
+</html>
